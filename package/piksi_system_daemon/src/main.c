@@ -215,12 +215,12 @@ bool port_mode_notify(struct setting *s, const char *val)
   pid_t *pid;
   if (s->addr == &uart0_mode) {
     dev = "/dev/ttyPS0";
-    opts = "";
+    opts = "--watermark-receive 100";
     opts_sbp = "-f sbp --filter-out sbp --filter-out-config /etc/uart0_filter_out_config";
     pid = &uart0_adapter_pid;
   } else if (s->addr == &uart1_mode) {
     dev = "/dev/ttyPS1";
-    opts = "";
+    opts = "--watermark-receive 100";
     opts_sbp = "-f sbp --filter-out sbp --filter-out-config /etc/uart1_filter_out_config";
     pid = &uart1_adapter_pid;
   } else {
