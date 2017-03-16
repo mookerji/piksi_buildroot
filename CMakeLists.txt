@@ -11,6 +11,7 @@ include("package/libsbp/CMakeLists.txt")
 add_subdirectory(package/libsbp_zmq/src)
 add_subdirectory(package/zmq_adapter/src)
 add_subdirectory(package/rotating_zmq_logger/src)
+add_subdirectory(package/libskylark/src)
 
 # Testing
 set (PACKAGE_BUILD_TESTS ON CACHE BOOL "Build the package tests")
@@ -20,5 +21,5 @@ if (PACKAGE_BUILD_TESTS)
   # Enable testing only works in root scope
   enable_testing ()
   add_subdirectory(host_tests/rotating_logger)
-
+  add_subdirectory(package/libskylark/tests/)
 endif (PACKAGE_BUILD_TESTS)
